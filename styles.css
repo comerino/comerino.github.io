@@ -1,3 +1,29 @@
-.title {
-    color: green;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.portfolio-grid img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.portfolio-grid img:hover {
+    transform: scale(1.1);
 }
