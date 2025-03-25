@@ -1,5 +1,7 @@
+
+/* --- styles.css (Styling) --- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -14,9 +16,17 @@ header {
 }
 
 nav a {
-    color: #333;
+    color: black;
     text-decoration: none;
     margin: 0 15px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: black;
+    color: white;
+    padding: 10px;
 }
 
 .portfolio-grid {
@@ -24,20 +34,15 @@ nav a {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     justify-content: center;
-    padding: 10px;
+    width: 100%;
 }
 
 .portfolio-grid img {
     width: 100%;
-    max-width: 200px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .portfolio-grid img:hover {
-    transform: scale(1.1);
-}
-
-.cv {
-    margin-top: 20px;
+    transform: scale(1.05);
 }
