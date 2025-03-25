@@ -3,27 +3,41 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: white;
+    color: black;
 }
 
 header {
-    background: #333;
-    color: white;
+    background: white;
+    color: #333;
     padding: 1em;
 }
 
 nav a {
-    color: white;
+    color: #333;
     text-decoration: none;
     margin: 0 15px;
 }
 
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
 .portfolio-grid img {
-    width: 200px;
-    margin: 10px;
+    width: 100%;
+    max-width: 200px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .portfolio-grid img:hover {
     transform: scale(1.1);
+}
+
+.cv {
+    margin-top: 20px;
 }
