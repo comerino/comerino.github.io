@@ -1,48 +1,451 @@
-
-/* --- styles.css (Styling) --- */
+/* Global Styles */
 body {
     font-family: 'Proxima Nova', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: white;
+    background-color: #f5f5f5; /* Light grey background */
     color: black;
 }
 
+h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-weight: 600;
+    text-transform: lowercase;
+
+}
+
+
+/* Header */
 header {
-    background: white;
-    color: #333;
-    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures logo is left, nav is right */
+    background: #f5f5f5;
+    font-family: "Funnel Display", sans-serif;
+
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo on the left */
+/* Base SVG Styling */
+
+.logo {
+    display: flex;
+    justify-content: center; /* Center them horizontally within the container */
+    align-items: center;
+
+}
+
+/* Container for the name */
+.name-container {
+    display: flex;
+    flex-direction: column; /* Stack the name parts vertically */
+    text-align: left; /* Left align the text */
+    margin-left: 10px; /* Space between the logo and text */
+}
+
+/* Style for the my-name */
+.my-name {
+    font-size: 1.2em; /* Adjust size as needed */
+    font-weight: 300; /* Make it bold if you prefer */
+    letter-spacing: -1.5px;
+    text-transform: lowercase;
+    color: #dedcdc;
+
+}
+
+
+/* Style for the my-name */
+.my-name:hover {
+font-weight: 300; /* Make it bold if you prefer */
+            color: black;
+
+}
+
+.my-title {
+    font-size: 1em; /* Adjust size as needed */
+    font-weight: 300; /* Make it bold if you prefer */
+    letter-spacing: -1.5px;
+    text-transform: lowercase;
+    color: #dedcdc;
+
+}
+
+
+/* Style for the my-name */
+.my-title:hover {
+font-weight: 300; /* Make it bold if you prefer */
+        color: black;
+
+}
+
+
+
+
+.logo svg {
+    fill: #dedcdc; /* Off-black color */
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 100px; /* Set width to 100px (change as needed) */
+    height: auto; /* Maintain aspect ratio */
+
+}
+
+/* Hover Effect: Change to Black & Bounce */
+.logo:hover svg {
+    fill: black; /* Full black */
+    animation: bounce 0.5s ease;
+    animation-timing-function: linear;
+
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-5px); } /* Moves up slightly */
+    60% { transform: translateY(2px); } /* Moves down slightly */
+    100% { transform: translateY(0); } /* Returns to normal */
+}
+
+
+
+
+/* Nav & Contact Button Wrapper (Right Side) */
+.nav-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes nav + button to the right properly */
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px; /* Adds spacing between nav and button */
+        text-transform: lowercase;
+
 }
 
 nav a {
-    color: black;
     text-decoration: none;
-    margin: 0 15px;
-    padding: 10px;
+    color: black;
+    padding: 8px 12px;
     transition: all 0.3s ease;
+    border-radius: 60px;
 }
 
 nav a:hover {
     background-color: black;
     color: white;
-    padding: 10px;
 }
 
+.contact-btn {
+    background: #bababa;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 60px;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: lowercase;
+    cursor: pointer;
+    display: inline-block;
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for width and background */
+    width: 150px; /* Initial width */
+    text-align: center;
+}
+
+/* Hover effect for the button */
+.contact-btn:hover {
+    width: 200px; /* Expanded width */
+    background: black; /* Change background to black */
+    font-weight: 500;
+
+}
+
+
+
+/* Intro Text Container */
+.intro-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Small Caps Title */
+.small-caps {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    color: #333;
+}
+
+/* Hookline (Main Tagline) */
+.hookline {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: #dedcdc;
+    margin-top: 5px;
+    letter-spacing: 5px; /* Tighter kerning */
+}
+
+/* Portfolio Container */
+.portfolio-container {
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    margin: 0 auto; /* Centers the container */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Space between images */
+}
+
+/* Portfolio Images */
+.portfolio-container img {
+    width: 100%; /* Ensures images fill their grid space */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 0px;
+    transition: transform 0.3s ease;
+}
+
+/* Ensure images fit within the grid */
+.portfolio-container a {
+    display: block;
+    overflow: hidden; /* Prevents the image from overflowing its container */
+    position: relative;
+}
+
+/* Base Image Styling */
+.portfolio-container img {
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Keeps images consistent */
+}
+
+/* Hover Effect: Scale & Rotate Inside Container */
+.portfolio-container a:hover img {
+    transform: scale(1.1) rotate(var(--rotate-angle));
+}
+
+/* Assign Randomized Rotation */
+.portfolio-container a:nth-child(odd):hover img {
+    --rotate-angle: -3deg; /* Slight tilt left */
+}
+
+.portfolio-container a:nth-child(even):hover img {
+    --rotate-angle: 3deg; /* Slight tilt right */
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on very small screens */
+    }
+}
+
+/* Portfolio item container */
+.portfolio-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Portfolio text container */
+.portfolio-text {
+    margin-top: 0;
+    padding: 0 10px;
+}
+
+/* Line 1 Text (styled differently) */
+.portfolio-text .line-one {
+    font-size: 14px; /* Smaller text size */
+    font-weight: bold;
+    color: #333; /* Dark grey */
+    margin-bottom: 0;
+}
+
+/* Line 2 Text (styled differently) */
+.portfolio-text .line-two {
+    font-size: 12px; /* Slightly smaller text size */
+    color: #777; /* Light grey */
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    justify-content: center;
-    width: 100%;
 }
 
 .portfolio-grid img {
     width: 100%;
-    border-radius: 10px;
-    transition: 0.3s;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
 .portfolio-grid img:hover {
     transform: scale(1.05);
+}
+
+/* Project Page Layout */
+.project-layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    align-items: start;
+}
+
+/* Project Text (Left) */
+.project-text {
+    padding: 20px;
+}
+
+/* Project Images (Right) */
+.project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 20px
+}
+
+.project-images .main-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Responsive Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .project-text,
+    .project-images {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: white;
+    margin-top: 40px;
+    padding: 60px 60px;
+    text-align: left;
+    color: #333;
+
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex: 1;
+    font-size: 14px;
+    color: #777;
+    display: flex;
+    flex-direction: column; /* Stack the name parts vertically */
+    text-align: left; /* Left align the text */
+}
+
+.footer-logo {
+    width: 80px;  /* Adjust the size of your logo */
+    height: auto;
+    margin-right: 20px;  /* Space between logo and text */
+
+}
+
+.footer-logo svg {
+    fill: #dedcdc; /* Off-black color */
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 80px; /* Set width to 100px (change as needed) */
+    height: auto; /* Maintain aspect ratio */
+
+}
+
+
+.thank-you-message {
+    font-size: 1.5em;
+    font-family: "Funnel Display", sans-serif;
+text-transform: lowercase;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.social-link {
+    font-size: 24px;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    color: #000000;  /* On hover, ensure icon turns to black */
+}
+
+footer p {
+    margin: 0;
 }
