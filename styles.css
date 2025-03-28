@@ -563,10 +563,13 @@ footer {
     text-transform: lowercase;
     cursor: pointer;
     display: inline-block;
-    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for width and background */
     width: 60px; /* Initial width */
     text-align: center;
     align-content: flex-end;
+}
+.contact-footer:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.1);
 }
 
 

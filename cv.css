@@ -1,0 +1,63 @@
+/* CV Page Styles */
+.cv-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Header */
+.cv-header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+/* Two-column layout */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Column Styling */
+.cv-column {
+    padding: 10px;
+}
+
+/* Section Titles */
+.cv-section-title {
+    background: black;
+    color: white;
+    padding: 8px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+/* Workplace Name */
+.cv-workplace {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Job Title */
+.cv-job-title {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+/* Job Description List */
+.cv-description {
+    padding-left: 20px;
+}
+
+/* Responsive: Stack on small screens */
+@media (max-width: 768px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+}
