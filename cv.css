@@ -1,3 +1,25 @@
+body {
+    font-family: 'Proxima Nova', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light grey background */
+    color: black;
+}
+
+h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-weight: 600;
+    text-transform: lowercase;
+
+}
+
+h2 {
+    font-family: "Funnel Display", sans-serif;
+    font-weight: 600;
+    text-transform: lowercase;
+
+}
+
 /* CV Page Styles */
 .cv-container {
     max-width: 900px;
@@ -6,14 +28,45 @@
 }
 
 /* Header */
+
+.cv-header-container {
+    display: flex; /* Aligns items in a row */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Adds space between header and image */
+}
+
 .cv-header {
     background: black;
     color: white;
-    text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
+    font-family: "Funnel Display", sans-serif;
     font-size: 28px;
-    text-transform: uppercase;
+    text-transform: lowercase;
+
 }
+
+.cv-photo {
+    width: 150px;  /* Adjust size as needed */
+    height: 150px; /* Make sure it's a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #f5f5f5; /* Optional: adds a border */
+}
+
+/* 🔹 Responsive Styling */
+@media (max-width: 600px) {
+    .cv-header-container {
+        flex-direction: column-reverse; /* Reverses order: Image appears first */
+        align-items: center; /* Centers both items */
+
+    }
+
+    .cv-photo {
+        width: 200px; /* Make image smaller on small screens */
+        height: 200px;
+    }
+}
+
 
 /* Two-column layout */
 .cv-grid {
@@ -33,20 +86,24 @@
     background: black;
     color: white;
     padding: 8px;
+    font-family: "Funnel Display", sans-serif;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 /* Workplace Name */
 .cv-workplace {
     font-weight: bold;
     font-size: 18px;
+    margin-bottom: 0;
 }
 
 /* Job Title */
 .cv-job-title {
     font-size: 16px;
+    font-weight: 300;
     font-style: italic;
+    margin-top: 0;
     margin-bottom: 5px;
 }
 
@@ -60,4 +117,8 @@
     .cv-grid {
         grid-template-columns: 1fr;
     }
+}
+
+li {
+    margin-bottom: 10px;
 }
