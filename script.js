@@ -1,6 +1,7 @@
-let numButtonClicks = 0;
-function buttonClicked() {
-    numButtonClicks = numButtonClicks + 1;
-    document.getElementById("mainDiv").textContent =
-        "Button Clicked times: " + numButtonClicks;
-}
+const hamburger = document.querySelector('.hamburger');
+const navContainer = document.querySelector('.nav-container');
+
+hamburger.addEventListener('click', () => {
+    navContainer.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
