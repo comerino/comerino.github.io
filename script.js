@@ -27,3 +27,14 @@
             });
         }
     }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainImage = document.querySelector(".main-image");
+    const thumbnails = document.querySelectorAll(".image-grid img");
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener("mouseenter", function () {
+            mainImage.src = this.src; // Change main image to hovered image
+        });
+    });
+});

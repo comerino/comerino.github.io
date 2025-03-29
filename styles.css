@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f5f5f5; /* Light grey background */
     color: black;
+
 }
 
 h1 {
@@ -13,6 +14,7 @@ h1 {
     text-transform: lowercase;
 
 }
+
 
 
 /* Header */
@@ -26,6 +28,18 @@ header {
     padding: 15px 20px;
     width: 100%;
     box-sizing: border-box;
+    margin: 0;
+    position: relative;
+}
+
+
+
+#header-placeholder {
+    height: 114px;
+    width:100%;
+    display: flex;
+    align-items: center; /* Ensures content inside stays aligned */
+
 }
 
 /* Logo on the left */
@@ -205,7 +219,7 @@ nav a:hover {
 @media screen and (max-width: 768px) {
     nav {
           display: none;
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         
         top: 50%;
@@ -316,9 +330,9 @@ nav a:hover {
     font-family: "Funnel Display", sans-serif;
     font-size: 20px;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: lowercase;
 
-    color: #dedcdc;
+    color: grey;
     margin-top: 5px;
     letter-spacing: 5px; /* Tighter kerning */
 }
@@ -332,6 +346,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     gap: 10px; /* Space between images */
+    grid-auto-rows: minmax(100px, auto); /* Dynamically adjusts row height based on content */
 }
 
 /* Portfolio Images */
@@ -416,6 +431,7 @@ nav a:hover {
 
 /* Line 2 Text (styled differently) */
 .portfolio-text .line-two {
+    font-family: 'Courier New', Courier, monospace; 
     font-size: 12px; /* Slightly smaller text size */
     color: #777; /* Light grey */
     margin-top: 0;
@@ -454,7 +470,15 @@ nav a:hover {
 
 /* Project Text (Left) */
 .project-text {
-    padding: 20px;
+    padding: 20px 40px 20px 20px;
+    margin-right: 10px;
+}
+
+.project-text p {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5em;
+    font-weight: 100;
+
 }
 
 /* Project Images (Right) */
@@ -469,6 +493,15 @@ nav a:hover {
     width: 100%;
     border-radius: 5px;
 }
+
+.main-image {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.main-image:hover {
+    opacity: 0.8;
+}
+
 
 /* Responsive Image Grid */
 .image-grid {
@@ -508,10 +541,13 @@ nav a:hover {
 html, body {
     height: 100%;
     margin: 0;
-    display: grid;
-    grid-template-rows: 1fr auto; /* Keep footer at the bottom */
+    display: flex;
+    flex-direction: column;
 }
 
+main {
+    flex: 1; /* Pushes the footer down */
+}
 
 
 /* Footer Styling */
@@ -526,6 +562,7 @@ footer {
 
 .footer-container {
     max-width: 100%;
+    max-height: 114px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
