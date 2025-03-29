@@ -8,11 +8,11 @@
     }
 
     // Load header and then initialize the burger menu
-    includeHTML("header.html", "header-placeholder", function() {
+    includeHTML("/header.html", "header-placeholder", function() {
         initializeBurgerMenu();
     });
 
-    includeHTML("footer.html", "footer-placeholder");
+    includeHTML("/footer.html", "footer-placeholder");
 
     function initializeBurgerMenu() {
         const burger = document.querySelector(".hamburger");
